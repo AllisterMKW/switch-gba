@@ -13,7 +13,6 @@ RUN apt-get update && \
     libav-tools \
     libzip-dev \
     imagemagick \
-    sqlite3 \
     libsqlite3-dev \
     libelf-dev \
     libpng-dev
