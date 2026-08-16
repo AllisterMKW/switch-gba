@@ -30,4 +30,6 @@ COPY ./src /home/src
 
 EXPOSE 8888
 
-CMD python /home/src/main.py
+ENV MGBA_PYTHON_SKIP_GIT=1
+WORKDIR /home
+CMD ["python", "src/main.py"]
