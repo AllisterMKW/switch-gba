@@ -34,5 +34,6 @@ COPY ./src /home/src
 EXPOSE 8888
 
 ENV MGBA_PYTHON_SKIP_GIT=1
+RUN sed -i 's/if len(GIT):/if False:/g' /home/mgba/src/platform/python/mgba/__init__.py
 WORKDIR /home
 CMD ["python", "src/main.py"]
