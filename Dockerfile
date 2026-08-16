@@ -34,7 +34,5 @@ COPY ./src /home/src
 EXPOSE 8888
 
 ENV MGBA_PYTHON_SKIP_GIT=1
-# Forcefully wipe out the compiled library file causing the crash and inject a mock info block
-RUN echo "import collections; GitInfo = collections.namedtuple('GitInfo', ['branch', 'revision', 'date', 'commit']); GIT = GitInfo('master', '1.0', '2026', '1')" > /usr/local/lib/python3.6/site-packages/mgba/__init__.py
 WORKDIR /home
 CMD ["python", "src/main.py"]
