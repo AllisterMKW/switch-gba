@@ -33,4 +33,5 @@ COPY ./src /home/src
 
 EXPOSE 8888
 
-CMD python /home/src/main.py
+WORKDIR /home
+CMD ["python", "src/main.py"]
