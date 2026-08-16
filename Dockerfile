@@ -1,5 +1,9 @@
 FROM python:3.6-jessie
 
+RUN echo "deb http://archive.debian.org/debian/ jessie main" > /etc/apt/sources.list && \
+    echo "deb-src http://archive.debian.org/debian/ jessie main" >> /etc/apt/sources.list && \
+    echo "Acquire::Check-Valid-Until \"false\";" > /etc/apt/apt.conf.d/10no-check-valid-until
+
 RUN apt-get update && \
     yes | apt-get install \
     qtbase5-dev \
